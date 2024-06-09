@@ -17,7 +17,7 @@ async function connect() {
   }
 }
 
-// Initialized logger and prettyJSON
+// Set the logger and prettyJSON
 app.use("*", logger());
 app.use("*", prettyJSON());
 
