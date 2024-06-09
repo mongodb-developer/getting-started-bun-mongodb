@@ -26,7 +26,7 @@ This project sets up a server using JavaScript runtime [Bun](https://bun.sh/) an
 
 3. **Configure MongoDB:**
 
-   Create a `.env` file in the root directory with your MongoDB URI:
+   Create a `.env` file in the root directory with your MongoDB URI and Port:
 
    ```env
    MONGODB_URI=the_mongodb_uri
