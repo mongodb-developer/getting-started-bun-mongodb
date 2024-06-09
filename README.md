@@ -1,4 +1,5 @@
 # Getting Started with Bun and MongoDB
+
 To install dependencies:
 
 ```bash
