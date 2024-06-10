@@ -1,5 +1,4 @@
 import { Hono } from "hono";
-import { cors } from "hono/cors";
 import client from "./lib/mongodb";
 import { BooksRoute } from "./routes/books";
 
@@ -15,18 +14,9 @@ async function connect() {
   }
 }
 
-// CORS
-app.use(
-  "*",
-  cors({
-    origin: "*",
-    allowMethods: ["GET", "POST", "PUT", "DELETE"],
-  }),
-);
-
 app.get("/", (context) => context.text("Welcome to Bun with MongoDB!"));
 
-// Example: localhost:3000/ - 'Welcome to Bun.js with MongoDB!'
+// Example: localhost:3000/ - 'Welcome to Bun with MongoDB!'
 
 // Use the books route
 app.route("/api", BooksRoute);
