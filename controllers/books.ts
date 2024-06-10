@@ -12,7 +12,10 @@ export const createBook = async (c: Context) => {
     const result = await db.collection("books").insertOne(newBook);
     return c.json({ message: "Book created", bookId: result.insertedId }, 201);
   } catch (error) {
-    return c.json({ message: "Failed to create book", error: error.message }, 500);
+    return c.json(
+      { message: "Failed to create book", error: error.message },
+      500,
+    );
   }
 };
 
@@ -22,7 +25,10 @@ export const getBooks = async (c: Context) => {
     const books = await db.collection("books").find().toArray();
     return c.json({ books });
   } catch (error) {
-    return c.json({ message: "Failed to retrieve books", error: error.message }, 500);
+    return c.json(
+      { message: "Failed to retrieve books", error: error.message },
+      500,
+    );
   }
 };
 
@@ -30,7 +36,9 @@ export const getBooks = async (c: Context) => {
 export const getBookById = async (c: Context) => {
   try {
     const { id } = c.req.param();
-    const book = await db.collection("books").findOne({ _id: new ObjectId(id) });
+    const book = await db
+      .collection("books")
+      .findOne({ _id: new ObjectId(id) });
 
     if (!book) {
       return c.json({ message: "Book not found" }, 404);
@@ -38,7 +46,10 @@ export const getBookById = async (c: Context) => {
 
     return c.json({ book });
   } catch (error) {
-    return c.json({ message: "Failed to retrieve book", error: error.message }, 500);
+    return c.json(
+      { message: "Failed to retrieve book", error: error.message },
+      500,
+    );
   }
 };
 
@@ -56,9 +67,15 @@ export const updateBook = async (c: Context) => {
       return c.json({ message: "Book not found" }, 404);
     }
 
-    return c.json({ message: "Book updated", acknowledged: result.acknowledged });
+    return c.json({
+      message: "Book updated",
+      acknowledged: result.acknowledged,
+    });
   } catch (error) {
-    return c.json({ message: "Failed to update book", error: error.message }, 500);
+    return c.json(
+      { message: "Failed to update book", error: error.message },
+      500,
+    );
   }
 };
 
@@ -75,8 +92,14 @@ export const deleteBook = async (c: Context) => {
       return c.json({ message: "Book not found" }, 404);
     }
 
-    return c.json({ message: "Book deleted", acknowledged: result.acknowledged });
+    return c.json({
+      message: "Book deleted",
+      acknowledged: result.acknowledged,
+    });
   } catch (error) {
-    return c.json({ message: "Failed to delete book", error: error.message }, 500);
+    return c.json(
+      { message: "Failed to delete book", error: error.message },
+      500,
+    );
   }
 };

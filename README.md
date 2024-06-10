@@ -44,21 +44,3 @@ This project sets up a server using JavaScript runtime [Bun](https://bun.sh/) an
 2. **Access the server:**
 
    Visit `http://localhost:3000` (default port, configurable via `.env`).
-
-## API Endpoints
-
-- **Root:**
-
-  ```http
-  GET /
-  ```
-
-  Response: `Welcome to Bun with MongoDB!`
-
-- **Books API:**
-
-  - **Get all books:** `GET /api/books`
-  - **Get a book by ID:** `GET /api/books/:id`
-  - **Create a book:** `POST /api/books`
-  - **Update a book:** `PUT /api/books/:id`
-  - **Delete a book:** `DELETE /api/books/:id`
