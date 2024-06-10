@@ -1,6 +1,4 @@
 import { Hono } from "hono";
-import { logger } from "hono/logger";
-import { prettyJSON } from "hono/pretty-json";
 import { cors } from "hono/cors";
 import client from "./lib/mongodb";
 import { BooksRoute } from "./routes/books";
@@ -16,10 +14,6 @@ async function connect() {
     process.exit(1);
   }
 }
-
-// Set the logger and prettyJSON
-app.use("*", logger());
-app.use("*", prettyJSON());
 
 // CORS
 app.use(
