@@ -24,7 +24,7 @@ app.use(
   }),
 );
 
-app.get("/", (context) => context.text("Welcome to Bun.js with MongoDB!"));
+app.get("/", (context) => context.text("Welcome to Bun with MongoDB!"));
 
 // Example: localhost:3000/ - 'Welcome to Bun.js with MongoDB!'
 

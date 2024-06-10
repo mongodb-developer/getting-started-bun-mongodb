@@ -53,7 +53,7 @@ This project sets up a server using JavaScript runtime [Bun](https://bun.sh/) an
   GET /
   ```
 
-  Response: `Welcome to Bun.js with MongoDB!`
+  Response: `Welcome to Bun with MongoDB!`
 
 - **Books API:**
 
